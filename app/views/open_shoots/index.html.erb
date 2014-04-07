@@ -1,0 +1,29 @@
+<h1>Listing open_shoots</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Location</th>
+    <th>Division</th>
+    <th>Score actual</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @open_shoots.each do |open_shoot| %>
+  <tr>
+    <td><%= open_shoot.user_id %></td>
+    <td><%= open_shoot.location_id %></td>
+    <td><%= open_shoot.division %></td>
+    <td><%= open_shoot.score_actual %></td>
+    <td><%= link_to 'Show', open_shoot %></td>
+    <td><%= link_to 'Edit', edit_open_shoot_path(open_shoot) %></td>
+    <td><%= link_to 'Destroy', open_shoot, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Open shoot', new_open_shoot_path %>

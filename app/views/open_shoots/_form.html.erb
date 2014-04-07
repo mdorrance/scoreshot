@@ -1,0 +1,33 @@
+<%= form_for(@open_shoot) do |f| %>
+  <% if @open_shoot.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@open_shoot.errors.count, "error") %> prohibited this open_shoot from being saved:</h2>
+
+      <ul>
+      <% @open_shoot.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :location_id %><br />
+    <%= f.number_field :location_id %>
+  </div>
+  <div class="field">
+    <%= f.label :division %><br />
+    <%= f.text_field :division %>
+  </div>
+  <div class="field">
+    <%= f.label :score_actual %><br />
+    <%= f.number_field :score_actual %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
